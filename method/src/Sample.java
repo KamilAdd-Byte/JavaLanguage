@@ -6,7 +6,6 @@
  */
 public class Sample {
 
-    private final static int MAX_VARIABLES = 3;
     private static String example;
     private static int variables;
     private static char aChar;
@@ -20,6 +19,15 @@ public class Sample {
         String example1 = Sample.example; // jeden egzemplarz składowej statycznej example
         String example2 = Sample.example;
         String example3 = Sample.example;
+        /**
+         * Lista html (same static variables with three object):
+         * <ol>
+         *     <li>example1
+         *     <li>example2
+         *     <li>example3
+         *     <li>
+         * </ol>
+         */
         System.out.println("example1 = " + example1);
         System.out.println("example2 = " + example2);
         System.out.println("example3 = " + example3);
