@@ -3,6 +3,22 @@ package com.responsywnie.array;
 public class LowArrayApp {
     public static void main(String[] args) {
         LowArray lowArray;                  //referencja do klasy
+        lowArray = getLowArray();
+
+        int nElems;
+        nElems = 10;
+
+        getAllNumbers(lowArray, nElems);
+
+        findXNumber(lowArray, nElems);
+
+        nElems = deletedXNumber(lowArray, nElems);
+
+        getAllNumbersAfterOperation(lowArray, nElems);
+
+    }
+    private static LowArray getLowArray() {
+        LowArray lowArray;
         lowArray = new LowArray(100);  //tworzymy obiekt klasy LowArray
         int nElems = 0;                    //liczba elementów tablicy
         int j;                             //licznik pętli
@@ -17,15 +33,28 @@ public class LowArrayApp {
         lowArray.setElem(7,66);
         lowArray.setElem(8,88);
         lowArray.setElem(9,9);
-
-        nElems = 10;
-
-        System.out.print("Liczby dostepne w obiekcie array: ");
+        return lowArray;
+    }
+    private static void getAllNumbersAfterOperation(LowArray lowArray, int nElems) {
+        int j;
         for (j = 0; j < nElems; j++)
-            System.out.print(lowArray.getElem(j)+" ");
+            System.out.print(lowArray.getElem(j) + " ");
         System.out.println("");
-
-        int searchNumber = 8;
+    }
+    private static int deletedXNumber(LowArray lowArray, int nElems) {
+        int j;
+        long xNumber = 52;
+        for (j = 0; j < nElems; j++)
+            if (lowArray.getElem(j) == xNumber)
+                break;
+        for (int k = j; k < nElems; k++)
+            lowArray.setElem(k, (int) lowArray.getElem(k+1));
+        nElems--;
+        return nElems;
+    }
+    private static void findXNumber(LowArray lowArray, int nElems) {
+        int j;
+        int searchNumber = 52;
         for (j= 0; j < nElems; j++)
             if (lowArray.getElem(j) == searchNumber)
                 break;
@@ -34,17 +63,9 @@ public class LowArrayApp {
         else
             System.out.print("Znaleziona liczba " + searchNumber);
         System.out.println("");
-
-        long xNumber = 77;
-        for (j = 0; j < nElems; j++)
-            if (lowArray.getElem(j) == xNumber)
-                break;
-        for (int k=j; k < nElems; k++)
-            lowArray.setElem(k, (int) lowArray.getElem(k+1));
-        nElems--;
-
-        for (j = 0; j < nElems; j++)
-            System.out.print(lowArray.getElem(j)+ " ");
-        System.out.println("");
+    }
+    private static void getAllNumbers(LowArray lowArray, int nElems) {
+        System.out.print("Liczby dostepne w obiekcie array: ");
+        getAllNumbersAfterOperation(lowArray, nElems);
     }
 }
