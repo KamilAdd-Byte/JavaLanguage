@@ -20,28 +20,31 @@ public class LowArrayApp {
 
         nElems = 10;
 
-        showNumberofLowArray(lowArray, nElems);
-        findNumberInArray(lowArray, nElems);
+        System.out.print("Liczby dostepne w obiekcie array: ");
+        for (j = 0; j < nElems; j++)
+            System.out.print(lowArray.getElem(j)+" ");
+        System.out.println("");
 
-    }
-
-    private static void findNumberInArray(LowArray lowArray, int nElems) {
-        int j;
-        int searchNumber = 1;
+        int searchNumber = 8;
         for (j= 0; j < nElems; j++)
             if (lowArray.getElem(j) == searchNumber)
                 break;
         if (j == searchNumber)
-            System.out.print("Znaleziona liczba " + searchNumber);
-        else
             System.out.print("W tym indexie nie ma liczby: " + searchNumber);
-    }
+        else
+            System.out.print("Znaleziona liczba " + searchNumber);
+        System.out.println("");
 
+        long xNumber = 77;
+        for (j = 0; j < nElems; j++)
+            if (lowArray.getElem(j) == xNumber)
+                break;
+        for (int k=j; k < nElems; k++)
+            lowArray.setElem(k, (int) lowArray.getElem(k+1));
+        nElems--;
 
-    private static void showNumberofLowArray(LowArray lowArray, int nElems) {
-        int j;
-        for (j = 0; j < nElems; j++){
-            System.out.print(lowArray.getElem(j)+" ");
-        }
+        for (j = 0; j < nElems; j++)
+            System.out.print(lowArray.getElem(j)+ " ");
+        System.out.println("");
     }
 }
