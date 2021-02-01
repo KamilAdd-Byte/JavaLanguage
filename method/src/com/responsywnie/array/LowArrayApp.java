@@ -21,17 +21,22 @@ public class LowArrayApp {
         nElems = 10;
 
         showNumberofLowArray(lowArray, nElems);
-
-        int searchNumber = 1;
-        for (j= 0; j < nElems; j++) {
-            if (lowArray.getElem(j) == searchNumber){
-                System.out.println("Znaleziona liczba " + searchNumber);
-            }else {
-                System.out.println("W tym indexie nie ma takiej liczby");
-            }
-        }
+        findNumberInArray(lowArray, nElems);
 
     }
+
+    private static void findNumberInArray(LowArray lowArray, int nElems) {
+        int j;
+        int searchNumber = 1;
+        for (j= 0; j < nElems; j++)
+            if (lowArray.getElem(j) == searchNumber)
+                break;
+        if (j == searchNumber)
+            System.out.print("Znaleziona liczba " + searchNumber);
+        else
+            System.out.print("W tym indexie nie ma liczby: " + searchNumber);
+    }
+
 
     private static void showNumberofLowArray(LowArray lowArray, int nElems) {
         int j;
