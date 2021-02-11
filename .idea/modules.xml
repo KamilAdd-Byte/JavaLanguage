@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaLanguage.iml" filepath="$PROJECT_DIR$/.idea/JavaLanguage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cezar/cezar.iml" filepath="$PROJECT_DIR$/cezar/cezar.iml" />
       <module fileurl="file://$PROJECT_DIR$/elevator/elevator.iml" filepath="$PROJECT_DIR$/elevator/elevator.iml" />
       <module fileurl="file://$PROJECT_DIR$/method/method.iml" filepath="$PROJECT_DIR$/method/method.iml" />
     </modules>

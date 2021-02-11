@@ -14,10 +14,10 @@ public class ElevatorApp {
         ServiceElevator se = new ServiceElevator();
         se.add(f1);
         se.add(f3);
+        se.add(f2);
         se.add(f4);
-        se.add(f6);
-        se.add(f7);
         se.add(f5);
+        se.add(f6);
 
         se.start();
     }
