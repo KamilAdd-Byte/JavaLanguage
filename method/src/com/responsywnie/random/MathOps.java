@@ -10,11 +10,11 @@ public class MathOps {
         Random random = new Random(47);
         LocalTime toLocalTime = getToLocalTime();
 
-        int i,j,k;
-        j = random.nextInt(100)+1;
+        int i, j, k;
+        j = random.nextInt(100) + 1;
         System.out.println("od 1 do 100: " + j + " wygenerowano: " + toLocalTime);
 
-        k = random.nextInt(200)+1;
+        k = random.nextInt(200) + 1;
         System.out.println("Zakres od 0 do 200: " + k + " wygenerowano: " + toLocalTime);
 
         i = j + k;

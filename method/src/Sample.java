@@ -6,11 +6,11 @@
  */
 public class Sample {
 
+    private static final double aDouble = 3.3;
     private static String example;
     private static int variables;
     private static char aChar;
     private static boolean aBoolean;
-    private static final double aDouble = 3.3;
 
     public static void main(String[] args) {
         /**
@@ -45,7 +45,7 @@ public class Sample {
          */
         System.out.println(Sample.variables + "" + Sample.aChar
                 + " " + Sample.aBoolean + " " + Sample.example
-        + " " + Sample.aDouble);
+                + " " + Sample.aDouble);
 
     }
 }
