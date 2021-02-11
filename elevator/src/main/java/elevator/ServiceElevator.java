@@ -3,8 +3,6 @@ package elevator;
 import model.Foodstuffs;
 import service.ElevatorSystem;
 
-import java.util.Arrays;
-
 /**
  * @author kamillodzinski
  * @version 1.0
@@ -12,23 +10,24 @@ import java.util.Arrays;
  */
 public class ServiceElevator implements ElevatorSystem {
     private static final int MAX_PACKAGE = 6;
-    private Foodstuffs[]foodstuffs = new Foodstuffs[MAX_PACKAGE];
-    private int nElem = 0;
+    private final Foodstuffs[] foodstuffs = new Foodstuffs[MAX_PACKAGE];
     private final double maxWeight = 356.999;
+    private int nElem = 0;
 
-    public void add(Foodstuffs stuffs){
-        if (nElem < MAX_PACKAGE){
+    public void add(Foodstuffs stuffs) {
+        if (nElem < MAX_PACKAGE) {
             foodstuffs[nElem] = stuffs;
             nElem++;
-        }else {
+        } else {
             System.out.println("Za dużo paczek!!! Poczekaj na kolejną windę");
         }
     }
+
     @Override
     public void start() {
-        if (weightIsCorrect()){
+        if (weightIsCorrect()) {
             System.out.println("Winda start! Obciążenie wynosi " + weightTotalValue());
-        }else{
+        } else {
             double overload = weightTotalValue() - maxWeight;
             System.out.println("Obciążenie za duże o: " + overload);
         }
@@ -38,10 +37,10 @@ public class ServiceElevator implements ElevatorSystem {
         return weightTotalValue() <= maxWeight;
     }
 
-    private double weightTotalValue(){
+    private double weightTotalValue() {
         double total = 0;//weight
         for (Foodstuffs foodstuff : foodstuffs) {
-            if (foodstuff!=null){
+            if (foodstuff != null) {
                 foodstuff.getWeightPackage();
             }
         }

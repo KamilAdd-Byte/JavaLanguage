@@ -1,15 +1,16 @@
 //: operators
 package com.responsywnie.letter;
+
 /**
- * @apiNote Aliasing with object.
  * @author kamillodzinski
+ * @apiNote Aliasing with object.
  */
 public class Letter {
     char c;
 }
 
 class PassObject {
-    static void f(Letter y){
+    static void f(Letter y) {
         y.c = 'Z';
     }
 

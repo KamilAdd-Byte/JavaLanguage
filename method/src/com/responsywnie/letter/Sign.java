@@ -3,8 +3,9 @@ package com.responsywnie.letter;
 public class Sign {
     float c;
 }
+
 class PassSignObject {
-    static void f(Sign y){
+    static void f(Sign y) {
         y.c = 1.334F;
     }
 

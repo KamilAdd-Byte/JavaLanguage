@@ -1,8 +1,8 @@
 package com.responsywnie.highArray;
 
-public class HighArray implements MethodArray{
-   private long[] numbers;
-   private int nElem;
+public class HighArray implements MethodArray {
+    private long[] numbers;
+    private int nElem;
 
     public HighArray(int maxNumbers) {
         numbers = new long[maxNumbers];
@@ -15,10 +15,10 @@ public class HighArray implements MethodArray{
         for (j = 0; j < nElem; j++)
             if (numbers[j] == searchNumber)
                 break;
-        if (j==nElem){
+        if (j == nElem) {
             System.out.println("nie znaleziono " + searchNumber);
             return false;
-        } else{
+        } else {
             System.out.println("znaleziono " + searchNumber);
             return true;
         }
@@ -34,14 +34,14 @@ public class HighArray implements MethodArray{
     @Override
     public boolean delete(int deleteNumber) {
         int j;
-        for (j= 0; j < nElem; j++)
+        for (j = 0; j < nElem; j++)
             if (deleteNumber == numbers[j])
                 break;
-        if (j==nElem)
+        if (j == nElem)
             return false;
         else {
             for (int k = j; k < nElem; k++)
-                numbers[k] = numbers[k+1];
+                numbers[k] = numbers[k + 1];
             nElem--;
             return true;
         }
@@ -50,8 +50,8 @@ public class HighArray implements MethodArray{
     @Override
     public void display() {
         for (int j = 0; j < nElem; j++) {
-            System.out.print(numbers[j]+" ");
-        System.out.print("");
+            System.out.print(numbers[j] + " ");
+            System.out.print("");
         }
     }
 
